@@ -16,6 +16,8 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use('/chat', require('./routes/chatbot'));
 app.use('/patient', require('./routes/patient'));
+app.use('/appointment', require('./routes/appointments'));
+
 app.listen("5001", () => {
     console.log('Backend Is Running');
 })

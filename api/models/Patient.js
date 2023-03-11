@@ -23,6 +23,21 @@ const PatientSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    bloodGroup: {
+        type: String, 
+        required: true
+    },
+    height: {
+        type: String,
+        required: true,
+    },
+    weight: {
+        type: String, 
+        required: true
+    },
+    appointments: [{
+        type: mongoose.Schema.Types.ObjectId,
+    }],
     visits: [{
         type: mongoose.Schema.Types.ObjectId,
     }],

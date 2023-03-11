@@ -21,13 +21,14 @@ router.post('/login', async (req, res) => {
         if (id) {
             patient = await Patient.findById(id);
             if(patient.password === req.body.password){
-            res.status(200).json({message: "True"})
+            res.status(200).json(patient)
             }else{
             res.status(200).json({message: "False"})
             }
         } else if (email) {
+            patient = await Patient.findOne({email: email});
             if(patient.password === req.body.password){
-                res.status(200).json({message: "True"})
+                res.status(200).json(patient)
                 }else{
                 res.status(200).json({message: "False"})
                 }
